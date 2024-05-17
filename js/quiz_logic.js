@@ -253,6 +253,7 @@ function encerrarQuiz(venceu) {
         telaDerrota.style.display = 'flex';
         document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
     }
+    //agora vai
 
     setTimeout(() => {
          if (venceu) {
