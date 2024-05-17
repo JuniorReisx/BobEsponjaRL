@@ -256,7 +256,7 @@ function encerrarQuiz(venceu) {
     //agora vai
 
     setTimeout(() => {
-        const path = '../pages/Resultado/resultado.html';
+        const path = '/pages/Resultado/resultado.html';
         console.log('Redirecting to:', path);
         
         if (venceu) {
