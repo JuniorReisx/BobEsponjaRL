@@ -165,6 +165,7 @@
 
 
 .alternativas {
+
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -229,6 +230,7 @@
   flex-direction: row;
   transition: width 2s;
   position: relative;
+  cursor: pointer;
 }
 
 .alternativa input[type="radio"] {

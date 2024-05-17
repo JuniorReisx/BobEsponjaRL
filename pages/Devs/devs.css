@@ -67,57 +67,8 @@ section {
     padding: 2rem;
 }
 
-.segundo-perfil {
-    background-color: var(--color-azul-escuro);
-    height: 90vh;
-    border: 5px solid var(--color-yellow);
-    border-radius: 6%;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2rem;
-}
 
-.terceiro-perfil {
-    background-color: var(--color-azul-escuro);
-    height: 90vh;
-    border: 5px solid var(--color-yellow);
-    border-radius: 6%;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2rem;
-}
 
-.quarto-perfil {
-    background-color: var(--color-azul-escuro);
-    height: 90vh;
-    border: 5px solid var(--color-yellow);
-    border-radius: 6%;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2rem;
-}
-
-.quinto-perfil {
-    background-color: var(--color-azul-escuro);
-    height: 90vh;
-    border: 5px solid var(--color-yellow);
-    border-radius: 6%;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 2rem;
-}
 
 .img-profile {
     max-width: 250px;
@@ -137,17 +88,6 @@ section {
     height: 210px;
 }
 
-.img-quartoperfil {
-    border-radius: 50%;
-    width: 250px;
-    height: 230px;
-}
-
-.img-quintoperfil {
-  border-radius: 50%;
-  width: 230px;
-  height: 230px;
-}
 
 .botao {
     width: 180px;
