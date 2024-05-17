@@ -256,16 +256,12 @@ function encerrarQuiz(venceu) {
     //agora vai
 
     setTimeout(() => {
-        const path = '/pages/Resultado/resultado.html';
-        console.log('Redirecting to:', path);
-        
         if (venceu) {
-            window.location.href = path;
+            window.location.href = '../pages/Resultado/resultado.html';
         } else {
-            window.location.href = path;
+            window.location.href = '../pages/Resultado/resultado.html';
         }
-    }, 3000);
-    
+    }, 3000); 
 }
 
 function exibirTempo(display) {
