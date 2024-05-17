@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz - Projeto M1</title>
+    <!-- Logo do quiz -->
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="/assets/images/logo.png"
+    />
+
+    <!-- Arquivo CSS global -->
+    <link rel="stylesheet" href="/css/global_styles.css" />
+
+    <!-- Arquivo CSS específico da página do quiz -->
+    <link rel="stylesheet" href="quiz.module.css" />
+    <link rel="stylesheet" href="menu.module.css" />
+
+    <!-- Arquivos CSS de components-->
+    <link rel="stylesheet" href="/css/components/botoes_unicornios.css" />
+    <link rel="stylesheet" href="/css/components/botao_iniciar.css" />
+    <link rel="stylesheet" href="/css/components/botao_simples.css" />
+    <link rel="stylesheet" href="/css/components/botoes_musica.css" />
+    <link rel="stylesheet" href="/css/components/toast.css" />
+
+    <!-- Ícones do Google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Ícones do Flaticon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk&family=Nabla&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+
+      <!--
+      <section class="telaMenu">
+        
+        <div id="myModal" class="modal_temas">
+
+          
+          <div class="modal-content">
+            <h1>Temas</h1>
+              <ul class="selecaoTema">
+                <li class="temasQuiz">
+                  <input id="conhecimentoGerais" class="radio-button-temas" type="radio" name="radio-temas">
+                  <label for="conhecimentoGerais" class="radio-tile-label">conhecimento Gerais</label>
+                </li>
+                <li class="temasQuiz">
+                  <input id="programacao" class="radio-button-temas" type="radio" name="radio-temas">
+                  <label for="programacao" class="radio-tile-label">Programação</label>
+              </li>
+                <li class="temasQuiz">
+                  <input id="matematica" class="radio-button-temas" type="radio" name="radio-temas">
+                  <label for="matematica" class="radio-tile-label">Matematica</label>
+                </li>
+                <li class="temasQuiz">
+                  <input id="historia" class="radio-button-temas" type="radio" name="radio-temas">
+                  <label for="historia" class="radio-tile-label">História</label>
+              </li>
+              <li class="temasQuiz">
+                  <input id="geografia" class="radio-button-temas" type="radio" name="radio-temas">
+                  <label for="geografia" class="radio-tile-label">Geografia</label>
+              </li>
+              <li class="temasQuiz">
+                  <input id="ciencias" class="radio-button-temas" type="radio" name="radiot-temas">
+                  <label for="ciencias" class="radio-tile-label">Ciências</label>
+              </li>
+              <li class="temasQuiz">
+                <input id="literatura" class="radio-button-temas" type="radio" name="radiot-temas">
+                <label for="literatura" class="radio-tile-label">Literatura</label>
+            </li>
+            <li class="temasQuiz">
+              <input id="entretenimento" class="radio-button-temas" type="radio" name="radiot-temas">
+              <label for="entretenimento" class="radio-tile-label">Entretenimento</label>
+          </li>
+              </ul>
+            
+            <button id="iniciarQuiz">Iniciar Quiz</button>
+          </div>
+
+        </div>
+
+
+          <ul class="navBar">
+            <li>BrainBox</li>
+            <li>texto</li>
+            <li>login</li>
+          </ul>
+        <div class="conteudo">
+        <div class="containerInfo">
+            <div class="infoModos">
+             
+            </div>
+            <div class="botoesModos">
+              <button id="myBtn">Open Modal</button>
+            </div>
+          </div>          
+        <ul class="modos">
+          <li class="modosDeJogo">
+              <input id="classico" class="radio-button" type="radio" name="radio" checked>
+              <label for="classico" class="radio-tile-label">Classico</label>
+            </li>
+            <li class="modosDeJogo">
+              <input id="aleatorio" class="radio-button" type="radio" name="radio">
+              <label for="aleatorio" class="radio-tile-label">Aleatorio</label>
+            </li>
+          <li class="modosDeJogo">
+              <input id="sobPressao" class="radio-button" type="radio" name="radio">
+              <label for="sobPressao" class="radio-tile-label">Sob Pressão</label>
+          </li>
+          <li class="modosDeJogo">
+              <input id="mistoQuente" class="radio-button" type="radio" name="radio">
+              <label for="mistoQuente" class="radio-tile-label">Misto Quente</label>
+          </li> 
+          <li class="modosDeJogo">
+              <input id="comunidade" class="radio-button" type="radio" name="radio">
+              <label for="comunidade" class="radio-tile-label">Quizes da Comunidade</label>
+          </li>
+          <li class="modosDeJogo">
+            <input id="multiplayer" class="radio-button" type="radio" name="radio">
+            <label for="multiplayer" class="radio-tile-label">Multiplayer</label>
+          </li>
+          <li class="modosDeJogo">
+            <input id="fabricaDeQuiz" class="radio-button" type="radio" name="radio">
+            <label for="fabricaDeQuiz" class="radio-tile-label">Fabrica de Quiz</label>
+          </li>
+        </ul>
+        </div>
+      </section> -->
+       
+      <section class="telaQuiz">
+
+        <!-- notificações toast (alerts) -->
+        <div id="toastContainer"></div>
+
+        <!-- tela da contagem regressiva -->
+        <div id="contagemRegressiva" style="display: none">
+          <span id="contagemRegressivaSpan" class="nabla"></span>
+
+          <button
+            class="button"
+            id="iniciarContagemBtn"
+            onclick="iniciarContagemRegressivaManual()"
+          >
+            <img
+              width="40"
+              height="40"
+              src="https://pngimg.com/uploads/spongebob/spongebob_PNG1.png"
+              alt=""
+            />
+            <span class="now">AGORA!</span>
+            <span class="play">Jogar</span>
+          </button>
+        </div>
+
+        <!-- Tela de Pausa -->
+        <div id="overlay" class="hidden">
+          <img
+            width="150px"
+            height="150px"
+            class="unicornio_com_cafe"
+            src="/assets/images/pausa-para-o-cafe.png"
+            alt="unicornio com café"
+          />
+          <div class="pause">
+            <div class="pausa_titulo">
+              <h1 class="pixelify-sans">Pausa pro Café?</h1>
+            </div>
+            <div class="botoes_musica">
+                <input id="mutarMusica" type="checkbox" onclick="toggleMute('musica')"/>
+                    <label class="toggleSwitch" for="mutarMusica">
+                    <div class="speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/som.gif" alt="icone animado de musica tocando">
+                    </div>
+
+                    <div class="mute-speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/mudo.gif" alt="icone animado de musica no mudo">
+                    </div>
+                </label>
+
+                <input id="mutarEfeitos" type="checkbox" onclick="toggleMute('efeitos')" />
+                    <label class="toggleSwitch" for="mutarEfeitos">
+                    <div class="speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/sino.gif" alt="icone animado de efeitos sonoros tocando">
+                        </svg>
+                    </div>
+
+                    <div class="mute-speaker">
+                        <img width="35px" height="35px" src="/assets/icons/sino.png" alt="icone animado de efeitos sonoros no mudo">
+                    </div>
+                </label>
+            </div>
+            <div class="botoes_pause">
+              <button
+                type="button"
+                id="retomar"
+                class="hidden botao_animado"
+                onclick="retomarQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/rosquinha.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865931.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao">Retomar</span>
+                <span class="texto_hover">VAMO</span>
+                <span class="texto_hover2">VAMO</span>
+              </button>
+              <button
+                type="button"
+                id="recomeçar"
+                class="hidden botao_animado"
+                onclick="recomeçarQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/croissant.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865936.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao" style="font-size: 12px; top: 35%"
+                  >Recomeçar</span
+                >
+                <span class="texto_hover">SHOW!</span>
+                <span class="texto_hover2">SHOW!</span>
+              </button>
+              <button
+                type="button"
+                id="sair"
+                class="hidden botao_animado"
+                onclick="sairQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/melancia.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865955.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao" style="left: 45%">Sair</span>
+                <span class="texto_hover">NÃO!</span>
+                <span class="texto_hover2">NÃO!</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- tela de derrota -->
+        <div id="telaDerrota" style="display: none">
+          <img width="400" height="400" class="unicornioTriste" src="https://cdn-icons-png.flaticon.com/512/4865/4865927.png" alt="Unicornio triste">
+          <div class="card_derrota">
+              <img width="300" class="gameOver" src="/assets/icons/anim/game-over.gif" alt="">
+          </div>
+          <div class="rain" id="rainContainer"></div>
+          <div id="resultadoPerguntasAcertadas"></div>
+      </div>
+      
+
+         <!-- tela de sucesso -->
+         <div id="telaSucesso" style="display: none">
+            <img width="400" height="400" class="unicornioFeliz" src="	https://cdn-icons-png.flaticon.com/512/4865/4865953.png" alt="Unicornio feliz">
+            <div class="card_sucesso">
+                <img width="300" class="gameSucess" src="	https://cdn-icons-png.flaticon.com/512/11250/11250937.png" alt="">
+            </div>
+         </div>
+
+         
+
+        <!-- Container do Quiz -->
+        <div class="quiz_container">
+          <div class="perguntas" >
+            <div class="contador">
+              <div id="timer"></div>
+            </div>
+            <div class="perguntas_info">
+              <div class="nivel" id="nivel"></div>
+              <div class="questao_numero" id="questao_numero"></div>
+            </div>
+            <div id="Questoes"></div>
+          </div>
+          <div class="alternativas">
+            <form id="formRespostas">
+              <ul class="alternativas-lista">
+                <!-- As alternativas são adicionadas aqui via javascript -->
+              </ul>
+              <div class="botoes">
+                <button type="button" class="botao_simples" id="pausarQuiz">
+                  <span class="button__text">Pausar</span>
+                  <span class="button__icon"
+                    ><img
+                      width="40"
+                      height="40"
+                      src="/assets/icons/anim/xicara-de-cafe.gif"
+                      alt=""
+                  /></span>
+                </button>
+                <button
+                  type="button"
+                  class="botao_simples"
+                  id="verificarResposta"
+                >
+                  <span class="button__text">Verificar</span>
+                  <span class="button__icon"
+                    ><img
+                      width="40"
+                      height="40"
+                      src="/assets/icons/anim/como.gif"
+                      alt=""
+                  /></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/quiz_config.js"></script>
+    <script src="/js/perguntas.js"></script>
+    <script src="/js/result.js"></script>
+    <script type="module" src="/js/quiz_logic.js"></script>
+  </body>
+</html>

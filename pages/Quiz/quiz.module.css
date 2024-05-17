@@ -1,0 +1,600 @@
+/* Estilo especificos do quiz (um botão especifico... uma animação que so acontece na pagina do quiz...) */
+
+.telaQuiz {
+    background-color: var(--color-azul-mar);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.quiz_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 800px;
+    height: 700px;
+    background-image: url("/assets/images/stacked-waves-haikei.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 0.5vmin solid #05060f;
+    box-shadow: 0.4rem 0.4rem #05060f;
+}
+
+.perguntas {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 30%;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    border-radius: 35px 0px 70px 35px;
+}
+
+.perguntas::before {
+  content: "";
+  position: absolute;
+  border-left: 30px solid rgb(255, 255, 255);
+  border-right: 30px solid transparent; /* Alterado para a cor do fundo do balão */
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid rgb(255, 255, 255);
+  transform: rotate(90deg);
+  left: 0px; /* Alterado para posicionar a ponta no lado esquerdo */
+  top: calc(50% + 50px) ;
+}
+
+
+.perguntas .perguntas_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 20px;
+}
+
+
+.nivel_nome,
+.numero_questao {
+  color: #000000;
+}
+
+.nivel_nome {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.numero_questao {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+
+.perguntas #Questoes {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  font-size: clamp(0.7em, 0.8em + 1vw, 1.5em);
+}
+
+
+.perguntas .contador {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: #3498db;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: bold;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+
+.vermelho {
+  color: var(--color-red);
+  font-weight: bold;
+  animation: tremer 0.3s linear infinite both;
+}
+
+@keyframes tremer {
+  0% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+ 
+  20% {
+   -webkit-transform: translate(-2px, 2px);
+   transform: translate(-2px, 2px);
+  }
+ 
+  40% {
+   -webkit-transform: translate(-2px, -2px);
+   transform: translate(-2px, -2px);
+  }
+ 
+  60% {
+   -webkit-transform: translate(2px, 2px);
+   transform: translate(2px, 2px);
+  }
+ 
+  80% {
+   -webkit-transform: translate(2px, -2px);
+   transform: translate(2px, -2px);
+  }
+ 
+  100% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+ }
+ 
+
+
+.amarelo {
+  color: var(--color-yellow);
+}
+
+.verde {
+  color: var(--color-green);
+}
+
+
+.alternativas {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.alternativas form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+}
+
+.alternativas ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.alternativa {
+  flex: 0 0 calc(50% - 10px);
+  margin: 5px;
+  height: 50px;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.alternativa:hover {
+  color: black;
+  transform: translate(-0.25rem, -0.25rem);
+  border: rgb(0, 0, 0)solid 2px;
+  box-shadow: 0.25rem 0.25rem rgb(0, 0, 0);
+}
+
+.alternativa:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+
+
+.alternativa-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  transition: width 2s;
+  position: relative;
+}
+
+.alternativa input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+#opcao1:checked + .alternativa-label {
+  border-radius: 5px;
+  background-color: rgb(168, 255, 189, 0.76);
+}
+
+#opcao2:checked + .alternativa-label {
+  border-radius: 5px;
+  background-color: rgba(247, 163, 54, 0.76);
+}
+
+#opcao3:checked + .alternativa-label {
+  border-radius: 5px;
+  background-color: rgb(239, 223, 101, 0.76);
+}
+
+#opcao4:checked + .alternativa-label {
+  border-radius: 5px;
+  background-color: rgb(189, 202, 255, 0.76);
+}
+
+
+.alternativa .alternativa_letra {
+  height: 100%;
+  width: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alternativa:hover .alternativa_letra img {
+  animation: slope 1s linear infinite;
+}
+
+@keyframes slope {
+  0% {
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+  }
+}
+
+.alternativa_texto {
+  flex-grow: 2;
+  color: var(--color-black);
+  min-width: 100px;
+  font-size: clamp(0.6em, 0.7em + 1vw, 1em);
+}
+
+.alternativa:nth-child(1) .alternativa_letra {
+  background-color: rgb(168, 255, 189, 0.76);
+}
+
+.alternativa:nth-child(2) .alternativa_letra {
+  background-color: rgba(247, 163, 54, 0.76);
+}
+
+.alternativa:nth-child(3) .alternativa_letra {
+  background-color: rgb(239, 223, 101, 0.76);
+}
+
+.alternativa:nth-child(4) .alternativa_letra {
+  background-color: rgb(189, 202, 255, 0.76);
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+}
+
+
+
+/* Adicione este código CSS para estilizar a div de sobreposição */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Adicione a classe hidden para ocultar a div de sobreposição */
+.hidden {
+  display: none;
+}
+
+/*codigo da tela de pausa*/
+.pause{
+  width: 300px;
+  height: 450px;
+  background-image: url(/assets/images/fundo_pause.svg);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 1001;
+  position: relative;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  padding: 20px;
+}
+
+.pause .pausa_titulo {
+  background-color: #ffffff;
+  height: 40px;
+  width: 90%;
+  border-radius: 10px;
+  border: #3498db solid 1px;
+  position: absolute;
+  top: -13px;
+  color: var(--color-azul-escuro);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+#overlay .unicornio_com_cafe {
+  z-index: 1000;
+  position: absolute;
+  top: calc(50% - 340px);
+}
+
+.botoes_musica {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+}
+
+.botoes_pause {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+}
+
+
+/* Adicione este código CSS para estilizar a div de contagem regressiva */
+#contagemRegressiva {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  justify-content: center !important;
+  align-items: center !important; 
+  z-index: 1001; /* Coloque um z-index mais alto do que o overlay */
+}
+
+.contagem-regressiva-hidden {
+  display: none;
+}
+
+.nabla {
+  font-family: "Nabla", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+  color: #3498db;
+}
+
+#contagemRegressivaSpan {
+  font-size: 7rem;
+  color: black;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+#telaDerrota {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important; 
+  z-index: 1001;
+}
+
+#telaDerrota .gameOver {
+  width: 300px;
+  height: 300px;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 1001;
+  position: relative;
+  border: 0.5vmin solid #0f0505;
+  box-shadow: 0.4rem 0.4rem #05060f;
+}
+
+#telaDerrota .unicornioTriste{
+  z-index: 1001;
+  position: absolute;
+  top: calc(50% - 360px);
+}
+
+
+.rain {
+  --clr-shadow__border: #5987a3;
+  --clr-text: #F6F4EB;
+  --clr-rain: #192333;
+  --clr-raindrop: #E9F8F9;
+  --size: 3rem;
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  gap: 0.6rem;
+  z-index: 1000;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  background-color: rgb(25, 35, 51, 0.7);
+  backdrop-filter: blur(5px);
+  background-image: url(
+  https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
+  animation: rain 0.4s linear infinite;
+  opacity: 0;
+}
+
+@keyframes rain {
+  0% {
+      background-position: 0 0;
+      opacity: 1;
+  }
+  100% {
+      background-position: 9% 90%;
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
+#telaSucesso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  justify-content: center !important;
+  align-items: center !important; 
+  z-index: 1001; /* Coloque um z-index mais alto do que o overlay */
+}
+
+#telaSucesso .gameSucess {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 1001;
+  position: relative;
+  background-color: #ffffff;
+  border: 0.5vmin solid #0f0505;
+  box-shadow: 0.4rem 0.4rem #05060f;
+}
+
+#telaSucesso .unicornioFeliz{
+  z-index: 1001;
+  position: absolute;
+  top: calc(50% - 360px);
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+  .quiz_container {
+    width: 500px; 
+  }
+
+  .alternativa {
+    flex: 0 0 90%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+    .quiz_container {
+      width: 400px;
+    }
+
+    .perguntas {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 80%;
+      height: 30%;
+      background-color: var(--color-white);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+      border-radius: 35px 35px 35px 35px;
+  }
+  
+  .perguntas::before {
+    display: none;
+  }
+  
+
+    .alternativa {
+      flex: 0 0 90%;
+    }
+
+    .botoes {
+      width: 100%;
+      height: 40%;
+      border-radius: 10px;
+    }
+    
+    
+  }
+
+
+@media screen and (max-width: 400px) {
+    .quiz_container {
+      width: 300px;
+    }
+
+
+  }
+
+
+

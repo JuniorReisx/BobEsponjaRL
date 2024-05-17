@@ -1,0 +1,62 @@
+.botao_simples {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #222;
+    --bg-color: #323232;
+    --main-color: #dedede;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-azul-mar);
+    box-shadow: 4px 4px var(--color-azul-claro);
+    background-color: var(--color-azul-claro);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .botao_simples, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .botao_simples .button__text {
+    position: relative;
+    transform: translateX(33px);
+    color: var(--font-color);
+    font-weight: 600;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    left: -35%;
+  }
+  
+  .botao_simples .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .botao_simples:hover {
+    background: var(--color-azul-escuro);
+  }
+  
+  .botao_simples:hover .button__text {
+    color: transparent;
+  }
+  
+  .botao_simples:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .botao_simples:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+  }

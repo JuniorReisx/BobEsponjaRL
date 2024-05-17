@@ -1,0 +1,85 @@
+
+.toggleSwitch {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(39, 39, 39);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    border: 0.5vmin solid #05060f;
+    box-shadow: 0.2rem 0.2rem #05060f;
+  }
+  
+
+  #mutarMusica,
+  #mutarEfeitos {
+    display: none;
+  }
+  
+  .bell {
+    width: 18px;
+  }
+  
+  .bell path {
+    fill: white;
+  }
+  
+  .speaker {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition-duration: 0.3s;
+  }
+  
+  .speaker svg {
+    width: 18px;
+  }
+  
+  .mute-speaker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 3;
+    transition-duration: 0.3s;
+  }
+  
+  .mute-speaker svg {
+    width: 18px;
+  }
+  
+  #mutarMusica:checked + .toggleSwitch .speaker,
+  #mutarEfeitos:checked + .toggleSwitch .speaker{
+    opacity: 0;
+    transition-duration: 0.3s;
+    box-shadow: 0.2rem 0.2rem #001aff;
+  }
+  
+  #mutarMusica:checked + .toggleSwitch .mute-speaker,
+  #mutarEfeitos:checked + .toggleSwitch .mute-speaker {
+    opacity: 1;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  #checkboxInput:active + .toggleSwitch {
+    transform: scale(0.6);
+    border: 0.2vmin solid #05060f;
+    box-shadow: 0.1rem 0.1rem #05060f;
+  }
+  
+  #checkboxInput:hover + .toggleSwitch {
+    background-color: rgb(61, 61, 61);
+  }
+  

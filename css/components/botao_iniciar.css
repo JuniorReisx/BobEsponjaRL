@@ -1,0 +1,66 @@
+#iniciarContagemBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: var(--color-white);
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: #92dcdd;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  #iniciarContagemBtn:hover {
+    transform: scale(1.2);
+    transition: all 100ms ease;
+  }
+  
+  #iniciarContagemBtn:active {
+    transform: scale(1.1);
+    transition: all 100ms ease;
+  }
+  
+  #iniciarContagemBtn img {
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all 0.5s ease;
+    transition-delay: 300ms;
+  }
+  
+  #iniciarContagemBtn:hover img {
+    transform: scale(2.5) translate(60%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  #iniciarContagemBtn:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+  }
+  
+  #iniciarContagemBtn:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+  
+  
+  
+  
