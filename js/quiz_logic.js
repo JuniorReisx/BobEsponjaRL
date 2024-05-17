@@ -255,13 +255,15 @@ function encerrarQuiz(venceu) {
     }
     //agora vai
 
+   
+
     setTimeout(() => {
         if (venceu) {
-            window.location.href = '../pages/Resultado/resultado.html';
+            window.location.href = '/pages/Resultado/resultados.html';
         } else {
-            window.location.href = '../pages/Resultado/resultado.html';
+            window.location.href = '/pages/Resultado/resultados.html';
         }
-    }, 3000); 
+    }, 3000);
 }
 
 function exibirTempo(display) {
