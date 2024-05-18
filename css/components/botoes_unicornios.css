@@ -60,11 +60,12 @@
   }
 }
 
-.icon {
-  position: absolute;
-  top: 25%;
-  left: 10%;
-  animation: rotate_4991 1s linear infinite;
+
+  .icon {
+    position: absolute;
+    top: 25%;
+    left: 4%;
+    animation: rotate_4991 1s linear infinite;
 }
 
 @keyframes rotate_4991 {

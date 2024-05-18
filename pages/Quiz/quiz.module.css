@@ -354,6 +354,7 @@
   border: 0.5vmin solid #05060f;
   box-shadow: 0.4rem 0.4rem #05060f;
   padding: 20px;
+
 }
 
 .pause .pausa_titulo {
@@ -369,9 +370,9 @@
 }
 
 #overlay .unicornio_com_cafe {
-  z-index: 1000;
+  z-index: 0;
   position: absolute;
-  top: calc(50% - 340px);
+  top: calc(50% - 320px);
 }
 
 .botoes_musica {
@@ -459,7 +460,8 @@
 #telaDerrota .unicornioTriste{
   z-index: 1001;
   position: absolute;
-  top: calc(50% - 360px);
+  top: calc(50% - 310px);
+
 }
 
 
