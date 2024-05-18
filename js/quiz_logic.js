@@ -4,8 +4,8 @@ let perguntaAtual = 0;
 let tempoPorPergunta = 30;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
-let pontuacao = 0;
-let perguntasAcertadas = 0;
+let pontuacao = localStorage.getItem('pontuacao') ? parseInt(localStorage.getItem('pontuacao')) : 0;
+let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
@@ -17,13 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function iniciarContagemRegressivaManual() {
     const iniciarContagemBtn = document.getElementById('iniciarContagemBtn');
-    iniciarContagemBtn.style.display = 'none';
+    iniciarContagemBtn.style.display = 'none';  // Oculta o botão após o início manual
 
     iniciarContagemRegressiva();
 }
 
-function exibirNivelDaPergunta(pergunta) {
+function mostrarNivelDaPergunta(pergunta) {
     const elementoNivel = document.getElementById('nivel');
+
 
     elementoNivel.innerHTML = '';
 
@@ -42,17 +43,20 @@ function exibirNivelDaPergunta(pergunta) {
     }
 }
 
-function exibirNumeroDaPergunta(perguntaAtual) {
+function mostrarNumeroDaPergunta(perguntaAtual) {
     const elementoNumero = document.getElementById('questao_numero');
 
     elementoNumero.innerHTML = '';
 
+    const indice = perguntas.indexOf(perguntaAtual);
+
     const numeroQuestao = document.createElement('span');
     numeroQuestao.className = 'numero_questao';
-    numeroQuestao.textContent = `${perguntaAtual + 1} / ${perguntas.length}`;
+    numeroQuestao.textContent = `${indice + 1} / 15`;
 
     elementoNumero.appendChild(numeroQuestao);
 }
+
 
 function exibirPergunta() {
     const { pergunta, alternativas } = perguntas[perguntaAtual];
@@ -61,8 +65,12 @@ function exibirPergunta() {
     const alternativasEmbaralhadas = alternativas.sort(() => Math.random() - 0.5);
     const alternativasLista = document.querySelector(".alternativas-lista");
 
-    exibirNivelDaPergunta(perguntas[perguntaAtual]);
-    exibirNumeroDaPergunta(perguntaAtual);
+    const nivelPergunta = perguntas[perguntaAtual];
+    mostrarNivelDaPergunta(nivelPergunta);
+
+    const numeroPergunta = perguntas[perguntaAtual];
+    mostrarNumeroDaPergunta(numeroPergunta);
+
 
     alternativasLista.innerHTML = alternativasEmbaralhadas.map((alternativa, index) => `
         <li class="alternativa">
@@ -78,6 +86,7 @@ function exibirPergunta() {
 
     tempoRestante = tempoPorPergunta;  // Configura o tempoRestante antes de iniciar o contador
 
+    // Adicione os event listeners após a criação dos elementos
     const verificarRespostaBtn = document.getElementById('verificarResposta');
     const pausarRetomarBtn = document.getElementById('pausarQuiz');
 
@@ -87,23 +96,29 @@ function exibirPergunta() {
     iniciarContador();
 }
 
+
 function showToast(message) {
     const toastContainer = document.getElementById('toastContainer');
 
+    // Criar elemento de toast
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = message;
 
+    // Adicionar toast ao container
     toastContainer.appendChild(toast);
 
+    // Mostrar o toast
     setTimeout(() => {
         toast.style.opacity = '1';
     }, 100);
 
+    // Esconder o toast após alguns segundos
     setTimeout(() => {
         toast.style.opacity = '0';
     }, 3000);
 
+    // Remover o toast do DOM após a animação de fade-out
     setTimeout(() => {
         toast.remove();
     }, 3300);
@@ -121,12 +136,13 @@ function verificarResposta() {
     const respostaCorretaUsuario = respostaUsuario.nextElementSibling.querySelector('.alternativa_texto').textContent === respostaCorreta;
 
     if (respostaCorretaUsuario) {
+        // Calcula a pontuação com base no tempo decorrido
         const pontosMaximos = 100;
         const pontosPorSegundo = pontosMaximos / tempoPorPergunta;
         const pontuacaoPergunta = Math.max(1, Math.ceil(pontosMaximos - pontosPorSegundo * (tempoPorPergunta - tempoRestante)));
         pontuacao += pontuacaoPergunta;
         
-        perguntasAcertadas++;
+        contarPerguntasAcertadas(); // Chama a função para contar perguntas acertadas
         
         showToast('Resposta correta!');
         perguntaAtual++;
@@ -134,6 +150,7 @@ function verificarResposta() {
         if (perguntaAtual < perguntas.length) {
             tempoRestante = tempoPorPergunta;
             exibirPergunta();
+            next_level();
             iniciarContador();
         } else {
             encerrarQuiz(true);
@@ -145,10 +162,19 @@ function verificarResposta() {
     }
 }
 
+function contarPerguntasAcertadas() {
+    perguntasAcertadas++;
+    console.log(perguntasAcertadas);
+    localStorage.setItem('pontuacao', pontuacao);
+    localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+    console.log(perguntasAcertadas)
+}
+
+
 function iniciarContador() {
     clearInterval(intervalId);
     const display = document.querySelector('#timer');
-    exibirTempo(display);
+    exibirTempo(display);  // Exibe o tempo inicial imediatamente
 
     intervalId = setInterval(() => {
         atualizarCorTimer(tempoRestante, display);
@@ -202,6 +228,7 @@ function retomarQuiz() {
     iniciarContador();
 }
 
+// Adicione a função ao objeto global (window)
 window.retomarQuiz = retomarQuiz;
 
 function encerrarQuiz(venceu) {
@@ -212,26 +239,29 @@ function encerrarQuiz(venceu) {
 
     if (venceu) {
         console.log('Parabéns! Você venceu! Pontuação final: ' + pontuacao);
-        console.log('Você acertou ' + perguntasAcertadas + ' perguntas.');
+        console.log('Você acertou ' + perguntasAcertadas + ' perguntas.'); // Adicionando contagem de perguntas acertadas
 
+        // Exiba a tela de sucesso
         telaSucesso.style.display = 'flex';
-        document.getElementById('quantidadePontuacao').innerText = pontuacao;
-        document.getElementById('quantidadeAcertos').innerText = perguntasAcertadas;
+        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
 
     } else {
         console.log('Você perdeu. Pontuação final: ' + pontuacao);
-        console.log('Você acertou ' + perguntasAcertadas + ' perguntas.');
+        console.log('Você acertou ' + perguntasAcertadas + ' perguntas.'); // Adicionando contagem de perguntas acertadas
 
+        // Exiba a tela de derrota
         telaDerrota.style.display = 'flex';
-        document.getElementById('quantidadePontuacao').innerText = pontuacao;
-        document.getElementById('quantidadeAcertos').innerText = perguntasAcertadas;
+        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
     }
+    //agora vai
+
+   
 
     setTimeout(() => {
         if (venceu) {
-            window.location.href = '/index.html';
+            window.location.href = '/pages/Resultado/resultado.html';
         } else {
-            window.location.href = '/index.html';
+            window.location.href = '/pages/Resultado/resultado.html';
         }
     }, 3000);
 }
@@ -248,6 +278,7 @@ function iniciarContagemRegressiva() {
 
     const intervalIdContagem = setInterval(() => {
         contagemRegressivaSpan.textContent = contagem;
+        
 
         if (contagem <= 0) {
             clearInterval(intervalIdContagem);
@@ -266,7 +297,7 @@ function iniciarContagemRegressiva() {
 function recomeçarQuiz() {
     perguntaAtual = 0;
     pontuacao = 0;
-    perguntasAcertadas = 0;
+    perguntasAcertadas = 0; // Reinicia o contador de perguntas acertadas
     tempoRestante = tempoPorPergunta;
     exibirPergunta();
     iniciarContador();
@@ -285,4 +316,3 @@ function sairQuiz() {
 }
 
 window.sairQuiz = sairQuiz;
-
