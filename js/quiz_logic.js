@@ -261,7 +261,7 @@ function encerrarQuiz(venceu) {
         if (venceu) {
             window.location.href = '/index.html';
         } else {
-            window.location.href = 'index.html';
+            window.location.href = '/index.html';
         }
     }, 3000);
 }
