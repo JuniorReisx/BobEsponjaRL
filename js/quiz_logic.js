@@ -259,9 +259,9 @@ function encerrarQuiz(venceu) {
 
     setTimeout(() => {
         if (venceu) {
-            window.location.href = '/index.html';
+            window.location.href = '/resultados.html';
         } else {
-            window.location.href = '/index.html';
+            window.location.href = '/resultados.html';
         }
     }, 3000);
 }
