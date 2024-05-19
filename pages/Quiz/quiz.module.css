@@ -413,7 +413,9 @@
 .contagem-regressiva-hidden {
   display: none;
 }
-
+button{
+  cursor: pointer;
+}
 .nabla {
   font-family: "Nabla", system-ui;
   font-optical-sizing: auto;
