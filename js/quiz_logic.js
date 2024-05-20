@@ -34,11 +34,11 @@ function mostrarNivelDaPergunta(pergunta) {
 
     elementoNivel.appendChild(nivelNome);
 
-    if (perguntaAtual <= 4) {
+    if (perguntaAtual <= 3) {
         nivelNome.classList.add('verde');
-    } else if (perguntaAtual <= 8) {
+    } else if (perguntaAtual <= 7) {
         nivelNome.classList.add('amarelo');
-    } else if (perguntaAtual <= 12) {
+    } else if (perguntaAtual <= 11) {
         nivelNome.classList.add('vermelho');
     }
 }
@@ -143,8 +143,12 @@ function verificarResposta() {
         pontuacao += pontuacaoPergunta;
         
         contarPerguntasAcertadas(); // Chama a função para contar perguntas acertadas
-        
-        showToast('Resposta correta!');
+        if(perguntaAtual <=10){
+            showToast('Resposta correta!');
+        }
+       else{
+        showToast('Você ganhou, parabêns!');
+       }
         perguntaAtual++;
         
         if (perguntaAtual < perguntas.length) {
@@ -265,7 +269,8 @@ function encerrarQuiz(venceu) {
 
         // Exiba a tela de sucesso
         telaSucesso.style.display = 'flex';
-        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
+        toast.style.display = 'none';
+        toast.textContent =`Você ganhou!!`
 
     } else {
         console.log('Você perdeu. Pontuação final: ' + pontuacao);
