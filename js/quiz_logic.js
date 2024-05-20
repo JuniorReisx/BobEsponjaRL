@@ -4,8 +4,8 @@ let perguntaAtual = 0;
 let tempoPorPergunta = 30;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
-let pontuacao = localStorage.getItem('pontuacao') ? parseInt(localStorage.getItem('pontuacao')) : 0;
-let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0; 
+let pontuacao = 0;
+let perguntasAcertadas =  0; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
@@ -36,9 +36,9 @@ function mostrarNivelDaPergunta(pergunta) {
 
     if (perguntaAtual <= 4) {
         nivelNome.classList.add('verde');
-    } else if (perguntaAtual <= 9) {
+    } else if (perguntaAtual <= 8) {
         nivelNome.classList.add('amarelo');
-    } else if (perguntaAtual <= 14) {
+    } else if (perguntaAtual <= 12) {
         nivelNome.classList.add('vermelho');
     }
 }
@@ -52,7 +52,7 @@ function mostrarNumeroDaPergunta(perguntaAtual) {
 
     const numeroQuestao = document.createElement('span');
     numeroQuestao.className = 'numero_questao';
-    numeroQuestao.textContent = `${indice + 1} / 15`;
+    numeroQuestao.textContent = `${indice + 1} / 12`;
 
     elementoNumero.appendChild(numeroQuestao);
 }
@@ -163,10 +163,9 @@ function verificarResposta() {
 }
 
 function contarPerguntasAcertadas() {
+    
     perguntasAcertadas++;
     console.log(perguntasAcertadas);
-    localStorage.setItem('pontuacao', pontuacao);
-    localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
     console.log(perguntasAcertadas)
 }
 
@@ -233,6 +232,29 @@ window.retomarQuiz = retomarQuiz;
 
 function encerrarQuiz(venceu) {
     clearInterval(intervalId);
+    const toastContainer = document.getElementById('toastContainer');
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+   
+   
+    // Adicionar toast ao container
+    toastContainer.appendChild(toast);
+
+    // Mostrar o toast
+    setTimeout(() => {
+        toast.style.opacity = '1';
+    }, 100);
+
+    // Esconder o toast após alguns segundos
+    setTimeout(() => {
+        toast.style.opacity = '0';
+    }, 3000);
+
+    // Remover o toast do DOM após a animação de fade-out
+    setTimeout(() => {
+        toast.remove();
+    }, 3300);
 
     const telaSucesso = document.getElementById('telaSucesso');
     const telaDerrota = document.getElementById('telaDerrota');
@@ -251,19 +273,17 @@ function encerrarQuiz(venceu) {
 
         // Exiba a tela de derrota
         telaDerrota.style.display = 'flex';
-        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
+    
+        toast.textContent =`Você acertou: ${perguntasAcertadas}`
     }
-    //agora vai
-
-   
 
     setTimeout(() => {
-        if (venceu) {
-            window.location.href = '/pages/Resultado/resultado.html';
-        } else {
-            window.location.href = '/pages/Resultado/resultado.html';
-        }
-    }, 3000);
+         if (venceu) {
+             window.location.href = '/index.html';
+         } else {
+             window.location.href = '/index.html';
+         }
+     }, 3000);
 }
 
 function exibirTempo(display) {
