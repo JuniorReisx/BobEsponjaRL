@@ -1,7 +1,7 @@
 /* Estilo especificos do quiz (um botão especifico... uma animação que so acontece na pagina do quiz...) */
 
 .telaQuiz {
-    background-color: var(--color-azul-mar);
+  background-image: url(https://wallpapercave.com/wp/wp6864086.png);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -19,13 +19,13 @@
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    width: 800px;
-    height: 700px;
+    width: 700px;
+    height: 600px;
     background-image: url("/assets/images/stacked-waves-haikei.svg");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    border: 0.5vmin solid #05060f;
+    border: 0.3vmin solid #05060f;
     box-shadow: 0.4rem 0.4rem #05060f;
 }
 
@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     height: 30%;
     background-color: var(--color-white);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
@@ -466,6 +466,35 @@ button{
 
 }
 
+.buttons button {
+  width: 130px;
+  height: 47px;
+  background: #0000ff;
+  border: 2px solid #0000ff;
+  outline: none;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 20px 20px;
+  cursor: pointer;  
+  transition: .5s;  
+}
+
+.buttons button:nth-child(1):hover {
+  background: #1d1d84;
+  border-color: #1d1d84;
+}
+
+.buttons button:last-child {
+  background: transparent;
+  color: #0000ff;
+}
+
+.buttons button:last-child:hover {
+  background: #0000ff;
+  color: #fff;
+}
 
 .rain {
   --clr-shadow__border: #5987a3;
@@ -538,7 +567,7 @@ button{
 #telaSucesso .unicornioFeliz{
   z-index: 1001;
   position: absolute;
-  top: calc(50% - 360px);
+  top: calc(50% - 300px);
 }
 
 
