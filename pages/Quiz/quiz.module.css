@@ -2,6 +2,8 @@
 
 .telaQuiz {
   background-image: url(https://wallpapercave.com/wp/wp6864086.png);
+  background-repeat: no-repeat;
+  background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -92,7 +94,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-black);
-  font-size: clamp(0.7em, 0.8em + 1vw, 1.5em);
+  font-size: 1.1rem;
 }
 
 
@@ -200,7 +202,7 @@
   background-color: var(--color-white);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  font-size: 20px;
+  font-size: 80%;
   font-weight: bold;
   list-style: none;
   cursor: pointer;
@@ -288,7 +290,7 @@
   flex-grow: 2;
   color: var(--color-black);
   min-width: 100px;
-  font-size: clamp(0.6em, 0.7em + 1vw, 1em);
+  font-size: 95%;
 }
 
 .alternativa:nth-child(1) .alternativa_letra {

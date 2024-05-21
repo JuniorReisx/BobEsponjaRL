@@ -1,77 +1,76 @@
 const perguntas = [
     // Nível Fácil
     {
-        pergunta: "Qual é a capital do Brasil?",
-        alternativas: ["Brasília", "Rio de Janeiro", "São Paulo", "Belém"],
-        resposta: "Brasília",
+        pergunta: "Qual é a próxima figura na sequência: quadrado, círculo, triângulo, quadrado, círculo, __?",
+        alternativas: ["Triângulo", "Quadrado", "Hexágono", "Círculo"],
+        resposta: "Triângulo",
         nivel: "facil"
     },
     {
-        pergunta: "Qual é o maior oceano do mundo?",
-        alternativas: ["Atlântico", "Índico", "Pacífico", "Ártico"],
-        resposta: "Pacífico",
+        pergunta: "Se todos os Zogs são Zigs e alguns Zigs são Zags, então alguns Zogs são definitivamente Zags?",
+        alternativas: ["Sim", "Não", "Não é possível dizer", "Nenhuma das anteriores"],
+        resposta: "Não é possível dizer",
         nivel: "facil"
     },
     {
-        pergunta: "Qual é a capital da Austrália?",
-        alternativas: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-        resposta: "Canberra",
+        pergunta: "Qual número completa a sequência: 2, 4, 8, 16, __?",
+        alternativas: ["24", "32", "30", "18"],
+        resposta: "32",
         nivel: "facil"
     },
     {
-        pergunta: "Em que ano ocorreu a Revolução Francesa?",
-        alternativas: ["1776", "1789", "1804", "1820"],
-        resposta: "1789",
+        pergunta: "Se você inverter a cor branca, você obtém preto. Se inverter o dia, você obtém __?",
+        alternativas: ["Noite", "Tarde", "Manhã", "Crepúsculo"],
+        resposta: "Noite",
         nivel: "facil"
+    },
+    {
+        pergunta: "Se Pedro é mais alto que João e mais baixo que Lucas, quem é o mais baixo?",
+        alternativas: ["Pedro", "João", "Lucas", "Não é possível dizer"],
+        resposta: "João",
+        nivel: "medio"
+    },
+    {
+        pergunta: "Em uma corrida, se você ultrapassar o segundo colocado, em que posição você fica?",
+        alternativas: ["Primeiro", "Segundo", "Terceiro", "Quarto"],
+        resposta: "Segundo",
+        nivel: "medio"
+    },
+    {
+        pergunta: "Se a sequência lógica for M, V, S, Q, __, qual é a próxima letra?",
+        alternativas: ["J", "K", "L", "N"],
+        resposta: "K",
+        nivel: "medio"
     },
     // Nível Médio
     {
-        pergunta: "Qual é o maior planeta do Sistema Solar?",
-        alternativas: ["Terra", "Júpiter", "Saturno", "Vênus"],
-        resposta: "Júpiter",
+        pergunta: "Um relógio marca 3:15. Qual é o ângulo entre os ponteiros das horas e dos minutos?",
+        alternativas: ["0 graus", "7,5 graus", "90 graus", "37,5 graus"],
+        resposta: "37,5 graus",
         nivel: "medio"
     },
     {
-        pergunta: "Quem escreveu 'Romeu e Julieta'?",
-        alternativas: ["Charles Dickens", "Jane Austen", "William Shakespeare", "F. Scott Fitzgerald"],
-        resposta: "William Shakespeare",
-        nivel: "medio"
-    },
-    {
-        pergunta: "Quantos elementos químicos existem na tabela periódica?",
-        alternativas: ["92", "108", "118", "140"],
-        resposta: "118",
-        nivel: "medio"
-    },
-    {
-        pergunta: "Qual é o animal mais rápido do mundo?",
-        alternativas: ["Leão", "Cheetah", "Falcão", "Tubarão"],
-        resposta: "Cheetah",
-        nivel: "medio"
-    },
-    // Nível Difícil
-    {
-        pergunta: "Quem foi o primeiro presidente dos Estados Unidos?",
-        alternativas: ["George Washington", "Thomas Jefferson", "John Adams", "Abraham Lincoln"],
-        resposta: "George Washington",
+        pergunta: "Se em um código, 'CAT' é escrito como 'GZG', como 'DOG' seria escrito?",
+        alternativas: ["HSI", "KRI", "HRK", "KSH"],
+        resposta: "KSH",
         nivel: "dificil"
     },
     {
-        pergunta: "Qual é o rio mais longo do mundo?",
-        alternativas: ["Rio Amazonas", "Rio Nilo", "Rio Yangtzé", "Rio Mississippi"],
-        resposta: "Rio Amazonas",
+        pergunta: "Você tem duas cordas. Cada uma queima exatamente em uma hora. Como você mediria 45 minutos?",
+        alternativas: ["Queimando as duas pontas de uma corda", "Queimando uma ponta de cada corda", "Queimando as duas pontas de uma corda e uma ponta da outra", "Não é possível medir"],
+        resposta: "Queimando as duas pontas de uma corda e uma ponta da outra",
         nivel: "dificil"
     },
     {
-        pergunta: "Quem pintou a 'Mona Lisa'?",
-        alternativas: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
-        resposta: "Leonardo da Vinci",
+        pergunta: "Qual número deve substituir o ponto de interrogação na série: 1, 4, 9, 16, 25, __?",
+        alternativas: ["35", "36", "49", "64"],
+        resposta: "36",
         nivel: "dificil"
     },
     {
-        pergunta: "Quem desenvolveu a teoria da relatividade?",
-        alternativas: ["Isaac Newton", "Galileu Galilei", "Albert Einstein", "Stephen Hawking"],
-        resposta: "Albert Einstein",
+        pergunta: "Se 'livro' é para 'ler', assim como 'garfo' é para __?",
+        alternativas: ["Escrever", "Comer", "Cozinhar", "Cortar"],
+        resposta: "Comer",
         nivel: "dificil"
     },
 ];
