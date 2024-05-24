@@ -45,10 +45,10 @@ const perguntas = [
  
     // Nível Médio
     {
-        pergunta: "Se um relógio adianta 5 minutos a cada hora e outro relógio atrasa 4 minutos a cada hora, em quantas horas eles mostrarão a mesma hora correta novamente?        ",
-        alternativas: ["10 horas", "11 horas", "12 horas", "13 horas"],
-        resposta: "11 horas",
-        nivel: "dificil"
+        pergunta: " Se hoje é quarta-feira, que dia será daqui a 3 dias? ",
+        alternativas: ["Quinta-feira", " Sábado", " Sexta-feira", " Domingo"],
+        resposta: "Sábado",
+        nivel: "medio"
     },
   
     {
@@ -67,7 +67,7 @@ const perguntas = [
         pergunta: "Um relógio marca 3:15. Qual é o ângulo entre os ponteiros das horas e dos minutos?",
         alternativas: ["0 graus", "7,5 graus", "90 graus", "37,5 graus"],
         resposta: "37,5 graus",
-        nivel: "medio"
+        nivel: "dificil"
 
     },
     {
