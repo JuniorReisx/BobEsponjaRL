@@ -58,9 +58,9 @@ const perguntas = [
         nivel: "dificil"
     },
     {
-        pergunta: "Se você tem um cubo sólido de 6 unidades de largura, altura e comprimento, e corta-o em cubos menores de 1 unidade de largura, altura e comprimento, quantos cubos menores você terá?",
-        alternativas: ["6", "36", "216", "18"],
-        resposta: "216",
+        pergunta: "Qual é o valor de Pi até três casas decimais?",
+        alternativas: ["3.13", "3.14", "3.16", "3.17"],
+        resposta: "3.14",
         nivel: "dificil"
     },
     {
