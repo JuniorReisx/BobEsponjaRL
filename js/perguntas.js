@@ -46,7 +46,7 @@ const perguntas = [
     // Nível Médio
     {
         pergunta: " Se hoje é quarta-feira, que dia será daqui a 3 dias? ",
-        alternativas: ["Quinta-feira", "Sábado", " Sexta-feira", " Domingo"],
+        alternativas: ["Quinta-feira", "Sábado", "Sexta-feira", "Domingo"],
         resposta: "Sábado",
         nivel: "medio"
     },
