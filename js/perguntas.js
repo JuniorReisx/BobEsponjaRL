@@ -66,7 +66,7 @@ const perguntas = [
     {
         pergunta: "Um relógio marca 3:15. Qual é o ângulo entre os ponteiros das horas e dos minutos?",
         alternativas: ["0 graus", "7,5 graus", "90 graus", "37,5 graus"],
-        resposta: "37,5 graus",
+        resposta: "7,5 graus",
         nivel: "dificil"
 
     },
